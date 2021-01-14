@@ -12,29 +12,28 @@ import java.util.List;
 
 /**
  * @Description :
- * @Author: Liruilong
- * @Date: 2019/12/18 19:23
+ * @Author: Alice
+ * @Date: 2021/01/18 19:23
  */
 @RestController
 public class HomeController {
 
     @Autowired
-   MainNoriceService mainNoriceService;
-  @Autowired
+    MainNoriceService mainNoriceService;
+    @Autowired
     OplogService oplogService;
 
     @GetMapping("/body")
     @Scheduled(cron = "0 0 3 * * ?")
-    public List<MainNorice> getAllsMainNoricebody(){
+    public List<MainNorice> getAllsMainNoricebody() {
         return mainNoriceService.getAllsMainNoricebody();
     }
 
     @GetMapping("/log")
     @Scheduled(cron = "0 0 3 * * ?")
-    public List<OpLog> getAllsOplog(){
+    public List<OpLog> getAllsOplog() {
         return oplogService.getAllsOplogm();
     }
-
 
 
 }

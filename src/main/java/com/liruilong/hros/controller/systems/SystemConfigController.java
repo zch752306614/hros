@@ -11,8 +11,8 @@ import java.util.List;
 
 /**
  * @Description :  菜单加载
- * @Author: Liruilong
- * @Date: 2019/12/21 13:14
+ * @Author: Alice
+ * @Date: 2021/01/16 13:14
  */
 @RestController
 @RequestMapping("/system/config")
@@ -21,9 +21,9 @@ public class SystemConfigController {
     MenuService menuService;
 
     /**
-     * @Author Liruilong
+     * @Author Alice
      * @Description  系統菜單加載
-     * @Date 16:13 2020/2/14
+     * @Date 16:13 2021/01/14
      * @Param []
      * @return java.util.List<com.liruilong.hros.model.Menu>
      **/

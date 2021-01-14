@@ -13,8 +13,8 @@ import java.util.logging.Logger;
 
 /**
  * @Description :全局异常处理
- * @Author: Liruilong
- * @Date: 2019/12/25 16:41
+ * @Author: Alice
+ * @Date: 2021/01/15 16:41
  */
 
 @RestControllerAdvice

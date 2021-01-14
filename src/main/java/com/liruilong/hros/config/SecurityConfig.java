@@ -32,8 +32,8 @@ import java.io.PrintWriter;
 
 /**
  * @Description :
- * @Author: Liruilong
- * @Date: 2019/12/18 19:11
+ * @Author: Alice
+ * @Date: 2021/01/11 19:11
  */
 
 @Configuration
@@ -58,9 +58,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(hrService);
     }
     /**
-     * @Author Liruilong
+     * @Author Alice
      * @Description  放行的请求路径
-     * @Date 19:25 2020/2/7
+     * @Date: 20:21 2021/01/11
      * @Param [web]
      * @return void
      **/

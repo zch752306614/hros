@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * @Author Liruilong 
+ * @Author Alice
  * @Description  职位
- * @Date 15:01 2019/12/25
+ * @Date 15:01 2021/01/12
  * @Param  
  * @return  
  **/
@@ -24,9 +24,9 @@ public class PositionController {
     PositionService positionService;
 
     /**
-     * @Author Liruilong
+     * @Author Alice
      * @Description  返回显示信息
-     * @Date 15:29 2019/12/25
+     * @Date 15:29 2021/01/15
      * @Param []
      * @return java.util.List<com.liruilong.hros.model.Position>
      **/
@@ -37,9 +37,9 @@ public class PositionController {
     }
 
     /**
-     * @Author Liruilong
+     * @Author Alice
      * @Description 添加
-     * @Date 15:29 2019/12/25
+     * @Date 15:29 2021/01/15
      * @Param [position]
      * @return com.liruilong.hros.model.RespBean
      **/
@@ -53,9 +53,9 @@ public class PositionController {
     }
 
     /**
-     * @Author Liruilong
+     * @Author Alice
      * @Description 更新
-     * @Date 15:29 2019/12/25
+     * @Date 15:29 2021/01/15
      * @Param [position]
      * @return com.liruilong.hros.model.RespBean
      **/
@@ -73,9 +73,9 @@ public class PositionController {
 
     }
     /**
-     * @Author Liruilong
+     * @Author Alice
      * @Description 删除
-     * @Date 15:29 2019/12/25
+     * @Date 15:29 2021/01/15
      * @Param [id]
      * @return com.liruilong.hros.model.RespBean
      **/
@@ -89,9 +89,9 @@ public class PositionController {
     }
 
     /**
-     * @Author Liruilong
+     * @Author Alice
      * @Description 批量删除
-     * @Date 15:30 2019/12/25
+     * @Date 15:30 2021/01/15
      * @Param [ids]
      * @return com.liruilong.hros.model.RespBean
      **/

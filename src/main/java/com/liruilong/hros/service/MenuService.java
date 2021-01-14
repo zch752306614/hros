@@ -18,8 +18,8 @@ import java.util.List;
 
 /**
  * @Description : 菜单处理
- * @Author: Liruilong
- * @Date: 2019/12/21 13:17
+ * @Author: Alice
+ * @Date: 2021/01/14 13:17
  */
 @Transactional
 @Service
@@ -35,9 +35,9 @@ public class MenuService {
 
     /**
      * @return java.util.List<com.liruilong.hros.model.Menu>
-     * @Author Liruilong
+     * @Author Alice
      * @Description 根据角色id获取权限菜单
-     * @Date 22:20 2019/12/22
+     * @Date 22:20 2021/01/15
      * @Param []
      **/
     public List<Menu> getMenusById() {
@@ -46,9 +46,9 @@ public class MenuService {
 
     /**
      * @return java.util.List<com.liruilong.hros.model.Menu>
-     * @Author Liruilong
+     * @Author Alice
      * @Description 获取所有权限菜单, springSecurity鑒權處理
-     * @Date 17:48 2019/12/24
+     * @Date 17:48 2021/01/15
      * @Param []
      **/
     // @Cacheable
@@ -58,9 +58,9 @@ public class MenuService {
 
     /**
      * @return java.util.List<com.liruilong.hros.model.Menu>
-     * @Author Liruilong
+     * @Author Alice
      * @Description 菜单数据初始化，系統設置裏的系統菜單處理。
-     * @Date 21:13 2019/12/26
+     * @Date 21:13 2021/01/16
      * @Param []
      **/
 
@@ -70,9 +70,9 @@ public class MenuService {
 
     /**
      * @return java.util.List<java.lang.Integer>
-     * @Author Liruilong
+     * @Author Alice
      * @Description 获取当前角色权限
-     * @Date 20:42 2019/12/26
+     * @Date 20:42 2021/01/16
      * @Param [rid]
      **/
     public List<Integer> getMidsByRid(Integer rid) {
@@ -83,9 +83,9 @@ public class MenuService {
 
     /**
      * @return boolean
-     * @Author Liruilong
+     * @Author Alice
      * @Description 更新信息
-     * @Date 21:12 2019/12/26
+     * @Date 21:12 2021/01/16
      * @Param [rid, mids]
      **/
 

@@ -13,9 +13,9 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @Author Liruilong
+ * @Author Alice
  * @Description
- * @Date 17:37 2019/12/26
+ * @Date 17:37 2021/01/16
  * @Param
  * @return
  **/
@@ -29,9 +29,9 @@ public class RoleService {
 
 
     /**
-     * @Author Liruilong
+     * @Author Alice
      * @Description  数据初始化
-     * @Date 20:42 2019/12/26
+     * @Date 20:42 2021/01/16
      * @Param []
      * @return java.util.List<com.liruilong.hros.model.Role>
      **/
@@ -41,9 +41,9 @@ public class RoleService {
     }
 
     /**
-     * @Author Liruilong
+     * @Author Alice
      * @Description  添加角色权限
-     * @Date 20:42 2019/12/26
+     * @Date 20:42 2021/01/16
      * @Param [role]
      * @return java.lang.Integer
      **/
@@ -57,9 +57,9 @@ public class RoleService {
     }
 
     /**
-     * @Author Liruilong
+     * @Author Alice
      * @Description 删除角色
-     * @Date 20:43 2019/12/26
+     * @Date 20:43 2021/01/16
      * @Param [rid]
      * @return java.lang.Integer
      **/

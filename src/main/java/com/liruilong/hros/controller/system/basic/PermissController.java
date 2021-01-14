@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * @Author Liruilong
+ * @Author Alice
  * @Description
- * @Date 17:21 2019/12/26
+ * @Date 17:21 2021/01/16
  * @Param
  * @return
  **/
@@ -31,9 +31,9 @@ public class PermissController {
         return roleService.getAllRoles();
     }
     /**
-     * @Author Liruilong
+     * @Author Alice
      * @Description  系統設置裏的菜單處理
-     * @Date 16:17 2020/2/14
+     * @Date 16:17 2021/01/14
      * @Param []
      * @return java.util.List<com.liruilong.hros.model.Menu>
      **/

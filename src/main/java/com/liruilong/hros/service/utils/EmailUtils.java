@@ -17,8 +17,8 @@ import java.util.Arrays;
 
 /**
  * @Description :
- * @Author: Liruilong
- * @Date: 2020/2/17 23:05
+ * @Author: Alice
+ * @Date: 2021/01/17 23:05
  */
 
 public class EmailUtils {

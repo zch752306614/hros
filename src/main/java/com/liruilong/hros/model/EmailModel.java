@@ -2,8 +2,8 @@ package com.liruilong.hros.model;
 
 /**
  * @Description :
- * @Author: Liruilong
- * @Date: 2020/2/18 12:25
+ * @Author: Alice
+ * @Date: 2021/01/18 12:25
  */
 public class EmailModel {
 

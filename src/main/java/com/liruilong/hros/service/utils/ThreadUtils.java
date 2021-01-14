@@ -8,8 +8,8 @@ import java.util.concurrent.*;
 
 /**
  * @Description :线程池工具类
- * @Author: Liruilong
- * @Date: 2020/2/19 12:29
+ * @Author: Alice
+ * @Date: 2021/01/19 12:29
  */
 public class ThreadUtils {
     //邮件发送线程池
@@ -23,9 +23,9 @@ public class ThreadUtils {
         return new Thread(() -> EmailUtils.sendGEmail(emailModel));
     }
     /**
-     * @Author Liruilong
+     * @Author Alice
      * @Description 构造一个有缓冲功能的线程池
-     * @Date 18:14 2020/2/19
+     * @Date 18:14 2021/01/19
      * @Param [thread]
      * @return void
      **/
@@ -33,9 +33,9 @@ public class ThreadUtils {
        Executors.newCachedThreadPool().execute(thread);
     }
     /**
-     * @Author Liruilong 
+     * @Author Alice
      * @Description 构造一个固定线程数目的线程池
-     * @Date 18:21 2020/2/19
+     * @Date 18:21 2021/01/19
      * @Param [thread] 
      * @return void 
      **/

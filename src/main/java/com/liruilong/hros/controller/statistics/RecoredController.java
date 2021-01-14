@@ -14,8 +14,8 @@ import java.util.List;
 
 /**
  * @Description : 人事记录统计
- * @Author: Liruilong
- * @Date: 2020/1/6 16:11
+ * @Author: Alice
+ * @Date: 2021/1/6 16:11
  */
 @RestController
 @RequestMapping("/statistics/recored")
@@ -27,9 +27,9 @@ public class RecoredController {
 
 
     /**
-     * @Author Liruilong
+     * @Author Alice
      * @Description 部门入职统计，离职统计 离职率
-     * @Date 10:58 2020/1/7
+     * @Date 10:58 2021/1/7
      * @Param []
      * @return java.util.List<com.liruilong.hros.model.datas.DataModelT>
      **/
@@ -39,9 +39,9 @@ public class RecoredController {
           return   dataModelTService.dataViewDepartment();
       }
     /**
-     * @Author Liruilong
+     * @Author Alice
      * @Description 职位入职统计，离职统计 离职工龄 离职率
-     * @Date 16:33 2020/1/7
+     * @Date 16:33 2021/1/7
      * @Param []
      * @return java.util.List<com.liruilong.hros.model.datas.DataModelT>
      **/
@@ -51,9 +51,9 @@ public class RecoredController {
         return dataModelTService.dataViewWorkAge();
       }
       /**
-       * @Author Liruilong
+       * @Author Alice
        * @Description 职称入职统计，离职统计 离职工龄 离职率
-       * @Date 16:51 2020/1/7
+       * @Date 16:51 2021/1/7
        * @Param []
        * @return java.util.List<com.liruilong.hros.model.datas.DataModelT>
        **/
@@ -64,9 +64,9 @@ public class RecoredController {
     }
 
     /**
-     * @Author Liruilong
+     * @Author Alice
      * @Description
-     * @Date 16:54 2020/1/7
+     * @Date 16:54 2021/1/7
      * @Param []
      * @return java.util.List<com.liruilong.hros.model.datas.DataModelT>
      **/

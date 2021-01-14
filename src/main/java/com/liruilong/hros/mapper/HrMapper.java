@@ -23,9 +23,9 @@ public interface HrMapper {
 
     /**
      * @return com.liruilong.hros.model.Hr
-     * @Author Liruilong
+     * @Author Alice
      * @Description 登录
-     * @Date 19:06 2019/12/18
+     * @Date 19:06 2021/01/18
      * @Param [username]
      **/
 
@@ -33,9 +33,9 @@ public interface HrMapper {
 
     /**
      * @return java.util.List<com.liruilong.hros.model.Role>
-     * @Author Liruilong
+     * @Author Alice
      * @Description 获取当前用户的所用角色
-     * @Date 23:23 2019/12/24
+     * @Date 23:23 2021/01/24
      * @Param [id]
      **/
 

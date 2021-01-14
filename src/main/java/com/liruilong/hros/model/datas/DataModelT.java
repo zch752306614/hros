@@ -2,8 +2,8 @@ package com.liruilong.hros.model.datas;
 
 /**
  * @Description :
- * @Author: Liruilong
- * @Date: 2020/1/6 19:57
+ * @Author: Alice
+ * @Date: 2021/01/16 19:57
  */
 public class DataModelT  extends DataModel{
     private Integer dimission;
