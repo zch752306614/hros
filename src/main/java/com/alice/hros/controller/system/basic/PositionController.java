@@ -28,7 +28,7 @@ public class PositionController {
      * @Description  返回显示信息
      * @Date 15:29 2021/01/15
      * @Param []
-     * @return java.util.List<com.liruilong.hros.model.Position>
+     * @return java.util.List<com.alice.hros.model.Position>
      **/
 
     @GetMapping("/")
@@ -41,7 +41,7 @@ public class PositionController {
      * @Description 添加
      * @Date 15:29 2021/01/15
      * @Param [position]
-     * @return com.liruilong.hros.model.RespBean
+     * @return com.alice.hros.model.RespBean
      **/
 
     @PostMapping("/")
@@ -57,7 +57,7 @@ public class PositionController {
      * @Description 更新
      * @Date 15:29 2021/01/15
      * @Param [position]
-     * @return com.liruilong.hros.model.RespBean
+     * @return com.alice.hros.model.RespBean
      **/
     @PutMapping("/")
     public RespBean updatePositions(@RequestBody Position position) {
@@ -77,7 +77,7 @@ public class PositionController {
      * @Description 删除
      * @Date 15:29 2021/01/15
      * @Param [id]
-     * @return com.liruilong.hros.model.RespBean
+     * @return com.alice.hros.model.RespBean
      **/
 
     @DeleteMapping("/{id}")
@@ -93,7 +93,7 @@ public class PositionController {
      * @Description 批量删除
      * @Date 15:30 2021/01/15
      * @Param [ids]
-     * @return com.liruilong.hros.model.RespBean
+     * @return com.alice.hros.model.RespBean
      **/
 
     @DeleteMapping("/")

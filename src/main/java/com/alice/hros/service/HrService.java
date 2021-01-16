@@ -33,7 +33,7 @@ public class HrService implements UserDetailsService {
     @Autowired
     OplogService oplogService;
 
-    private static Logger Loggerlogger = Logger.getLogger("com.liruilong.hros.service.HrService");
+    private static Logger Loggerlogger = Logger.getLogger("com.alice.hros.service.HrService");
 
     // 根据用户名加载user对象
     @Override

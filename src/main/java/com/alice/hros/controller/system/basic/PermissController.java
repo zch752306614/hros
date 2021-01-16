@@ -35,7 +35,7 @@ public class PermissController {
      * @Description  系統設置裏的菜單處理
      * @Date 16:17 2021/01/14
      * @Param []
-     * @return java.util.List<com.liruilong.hros.model.Menu>
+     * @return java.util.List<com.alice.hros.model.Menu>
      **/
 
     @GetMapping("/menus")

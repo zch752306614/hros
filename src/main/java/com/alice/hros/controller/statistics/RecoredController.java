@@ -31,7 +31,7 @@ public class RecoredController {
      * @Description 部门入职统计，离职统计 离职率
      * @Date 10:58 2021/1/7
      * @Param []
-     * @return java.util.List<com.liruilong.hros.model.datas.DataModelT>
+     * @return java.util.List<com.alice.hros.model.datas.DataModelT>
      **/
     @Scheduled(cron = "0 0 3 * * ?")
     @GetMapping("/department")
@@ -43,7 +43,7 @@ public class RecoredController {
      * @Description 职位入职统计，离职统计 离职工龄 离职率
      * @Date 16:33 2021/1/7
      * @Param []
-     * @return java.util.List<com.liruilong.hros.model.datas.DataModelT>
+     * @return java.util.List<com.alice.hros.model.datas.DataModelT>
      **/
      @Scheduled(cron = "0 0 3 * * ?")
       @GetMapping("/workAge")
@@ -55,7 +55,7 @@ public class RecoredController {
        * @Description 职称入职统计，离职统计 离职工龄 离职率
        * @Date 16:51 2021/1/7
        * @Param []
-       * @return java.util.List<com.liruilong.hros.model.datas.DataModelT>
+       * @return java.util.List<com.alice.hros.model.datas.DataModelT>
        **/
     @GetMapping("/JobLevel")
     @Scheduled(cron = "0 0 3 * * ?")
@@ -68,7 +68,7 @@ public class RecoredController {
      * @Description
      * @Date 16:54 2021/1/7
      * @Param []
-     * @return java.util.List<com.liruilong.hros.model.datas.DataModelT>
+     * @return java.util.List<com.alice.hros.model.datas.DataModelT>
      **/
 
 

@@ -38,17 +38,18 @@ public class EmployeetrainController {
         return employeeService.getEmploteeByPgeT(page, size, employee, beginDateScope);
 
     }
+
     @GetMapping("/inia")
     public RespPageBean getEmploteeByPgeA(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10") Integer size, Employee employee, Date[] beginDateScope) {
         return employeeService.getEmploteeByPgeA(page, size, employee, beginDateScope);
 
     }
+
     @GetMapping("/initapp")
     public RespPageBean getAppraiseByPge(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10") Integer size, Employee employee, Date[] beginDateScope) {
         return employeeService.getAppraiseByPge(page, size, employee, beginDateScope);
 
     }
-
 
 
     @PostMapping("/")
@@ -59,6 +60,7 @@ public class EmployeetrainController {
             return RespBean.error("添加失败");
         }
     }
+
     @PostMapping("/add")
     public RespBean addAppraise(@RequestBody Appraise appraise) {
         if (appraiseService.addAppraise(appraise) == 1) {
@@ -76,6 +78,7 @@ public class EmployeetrainController {
             return RespBean.error("更新失败");
         }
     }
+
     @PutMapping("/app")
     public RespBean updateAppraise(@RequestBody Appraise appraise) {
         if (appraiseService.updateAppraise(appraise) == 1) {
@@ -84,25 +87,26 @@ public class EmployeetrainController {
             return RespBean.error("更新失败");
         }
     }
+
     /**
-     * @Author Liruilong
-     * @Description  删除
-     * @Date 22:35 2020/1/13
+     * @return com.alice.hros.model.RespBean
+     * @Author Alice
+     * @Description 删除
+     * @Date 22:35 2021/01/13
      * @Param [eid, id]
-     * @return com.liruilong.hros.model.RespBean
      **/
 
     @DeleteMapping("/{eid}/{id}")
-    public RespBean deleteEmployeetrain(@PathVariable Integer eid, @PathVariable Integer id){
-        if (employeetrainService.deleteEmployeetrain(eid,id) == 1) {
+    public RespBean deleteEmployeetrain(@PathVariable Integer eid, @PathVariable Integer id) {
+        if (employeetrainService.deleteEmployeetrain(eid, id) == 1) {
             return RespBean.ok("取消成功!");
         }
         return RespBean.error("取消失败!");
     }
 
     @DeleteMapping("/app/{eid}/{id}")
-    public RespBean deleteAppraise(@PathVariable Integer eid, @PathVariable Integer id){
-        if (appraiseService.deleteAppraise(eid,id) == 1) {
+    public RespBean deleteAppraise(@PathVariable Integer eid, @PathVariable Integer id) {
+        if (appraiseService.deleteAppraise(eid, id) == 1) {
             return RespBean.ok("取消成功!");
         }
         return RespBean.error("取消失败!");
@@ -116,11 +120,11 @@ public class EmployeetrainController {
     }
 
     /**
-     * @Author Liruilong
-     * @Description   批量处理
-     * @Date 22:35 2020/1/13
+     * @return com.alice.hros.model.RespBean
+     * @Author Alice
+     * @Description 批量处理
+     * @Date 22:35 2021/01/13
      * @Param [employeetrain, ids, beginDateScope]
-     * @return com.liruilong.hros.model.RespBean
      **/
 
     @GetMapping("/addt")
@@ -132,6 +136,7 @@ public class EmployeetrainController {
             return RespBean.error("添加失败");
         }
     }
+
     @GetMapping("/adda")
     public RespBean addEmploteetByPge(Appraise appraise, Integer[] ids) {
 

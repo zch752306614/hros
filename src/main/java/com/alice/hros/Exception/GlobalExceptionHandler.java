@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    Logger logger = Logger.getLogger("com.liruilong.hros.Exception.GlobalExceptionHandler");
+    Logger logger = Logger.getLogger("com.alice.hros.Exception.GlobalExceptionHandler");
     @ExceptionHandler(SQLException.class)
     public RespBean sqlException(SQLException e) {
         if (e instanceof MySQLIntegrityConstraintViolationException) {

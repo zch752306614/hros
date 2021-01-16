@@ -30,7 +30,7 @@ public class MenuService {
     OplogService oplogService;
 
     /**
-     * @return java.util.List<com.liruilong.hros.model.Menu>
+     * @return java.util.List<com.alice.hros.model.Menu>
      * @Author Alice
      * @Description 根据角色id获取权限菜单
      * @Date 22:20 2021/01/15
@@ -41,7 +41,7 @@ public class MenuService {
     }
 
     /**
-     * @return java.util.List<com.liruilong.hros.model.Menu>
+     * @return java.util.List<com.alice.hros.model.Menu>
      * @Author Alice
      * @Description 获取所有权限菜单, springSecurity鑒權處理
      * @Date 17:48 2021/01/15
@@ -53,7 +53,7 @@ public class MenuService {
     }
 
     /**
-     * @return java.util.List<com.liruilong.hros.model.Menu>
+     * @return java.util.List<com.alice.hros.model.Menu>
      * @Author Alice
      * @Description 菜单数据初始化，系統設置裏的系統菜單處理。
      * @Date 21:13 2021/01/16

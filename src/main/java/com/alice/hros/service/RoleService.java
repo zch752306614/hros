@@ -33,7 +33,7 @@ public class RoleService {
      * @Description  数据初始化
      * @Date 20:42 2021/01/16
      * @Param []
-     * @return java.util.List<com.liruilong.hros.model.Role>
+     * @return java.util.List<com.alice.hros.model.Role>
      **/
 
     public List<Role> getAllRoles() {

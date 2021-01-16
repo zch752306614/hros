@@ -111,9 +111,9 @@ public class EmpBasicController {
     }
 
 /**
- * @Author Liruilong
+ * @Author Alice
  * @Description  文件下载
- * @Date 19:04 2020/1/1
+ * @Date 19:04 2021/01/12
  * @Param []
  * @return org.springframework.http.ResponseEntity<byte[]>
  **/
@@ -126,11 +126,11 @@ public class EmpBasicController {
 
 
     /**
-     * @Author Liruilong
+     * @Author Alice
      * @Description 文件导出
-     * @Date 19:48 2020/1/1
+     * @Date 19:48 2021/01/12
      * @Param [file]
-     * @return com.liruilong.hros.model.RespBean
+     * @return com.alice.hros.model.RespBean
      **/
 
     @PostMapping("/import")

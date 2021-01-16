@@ -38,9 +38,9 @@ public class POIUtils {
         //文档类别
         docInfo.setCategory("员工信息");
         //文档管理员
-        docInfo.setManager("Liruilong");
+        docInfo.setManager("Alice");
         //设置公司信息
-        docInfo.setCompany("liruiong.com");
+        docInfo.setCompany("Alice.com");
         //4. 获取文档摘要信息
         SummaryInformation summInfo = workbook.getSummaryInformation();
         //文档标题
@@ -214,8 +214,6 @@ public class POIUtils {
     }
 
 
-     
-
     public static List<Employee> excel2Employee(MultipartFile file, List<Nation> allNations, List<Politicsstatus> allPoliticsstatus
             , List<Department> allDepartments, List<Position> allPositions, List<JobLevel> allJobLevels) {
         List<Employee> list = new ArrayList<>();
@@ -243,7 +241,7 @@ public class POIUtils {
                     //7. 获取列数
                     int physicalNumberOfCells = row.getPhysicalNumberOfCells();
                     employee = new Employee();
-                    for (int k = 0; k < physicalNumberOfCells ; k++) {
+                    for (int k = 0; k < physicalNumberOfCells; k++) {
                         HSSFCell cell = row.getCell(k);
                         System.out.println(cell);
                         switch (cell.getCellType()) {

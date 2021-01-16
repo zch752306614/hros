@@ -21,7 +21,7 @@ public interface HrMapper {
     int updateByPrimaryKey(Hr record);
 
     /**
-     * @return com.liruilong.hros.model.Hr
+     * @return com.alice.hros.model.Hr
      * @Author Alice
      * @Description 登录
      * @Date 19:06 2021/01/18
@@ -31,7 +31,7 @@ public interface HrMapper {
     Hr loadUserByUsername(String username);
 
     /**
-     * @return java.util.List<com.liruilong.hros.model.Role>
+     * @return java.util.List<com.alice.hros.model.Role>
      * @Author Alice
      * @Description 获取当前用户的所用角色
      * @Date 23:23 2021/01/24

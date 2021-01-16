@@ -45,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     CustomUrlDecisionManager customUrlDecisionManager;
     @Autowired
-    VerifyCodeFilter verifyCodeFilter ;
+    VerifyCodeFilter verifyCodeFilter;
     @Autowired
     MyAuthenticationFailureHandler myAuthenticationFailureHandler;
 
@@ -53,22 +53,25 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(hrService);
     }
+
     /**
+     * @return void
      * @Author Alice
-     * @Description  放行的请求路径
+     * @Description 放行的请求路径
      * @Date: 20:21 2021/01/11
      * @Param [web]
-     * @return void
      **/
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/auth/code","/login","/css/**","/js/**", "/index.html", "/img/**", "/fonts/**","/favicon.ico");
+        web.ignoring().antMatchers("/auth/code", "/login", "/css/**", "/js/**", "/index.html", "/img/**", "/fonts/**", "/favicon.ico");
     }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -83,7 +86,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         return object;
                     }
                 })
-                .and().formLogin().usernameParameter("username").passwordParameter("password") .loginProcessingUrl("/doLogin")
+                .and().formLogin().usernameParameter("username").passwordParameter("password").loginProcessingUrl("/doLogin")
                 .loginPage("/login")
                 //登录成功回调
                 .successHandler(new AuthenticationSuccessHandler() {

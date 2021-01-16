@@ -40,10 +40,10 @@ public class EmployeeService {
     DecimalFormat decimalFormat = new DecimalFormat("##.00");
 
     /**
-     * @return com.liruilong.hros.model.RespPageBean
-     * @Author Liruilong
+     * @return com.alice.hros.model.RespPageBean
+     * @Author Alice
      * @Description page 为显示的页数，size为每页显示的页数
-     * @Date 11:34 2019/12/31
+     * @Date 11:34 2021/01/15
      * @Param [page, size]
      **/
 
@@ -73,7 +73,7 @@ public class EmployeeService {
         employee.setContractterm(Double.parseDouble(decimalFormat.format(month / 12)));
         int result = employeeMapper.insertSelective(employee);
         oplogService.addOpLog(new OpLog((byte) 2, new Date(), "员工入职::name:" + employee.getName() + "workId:" + employee.getWorkid(), Hruitls.getCurrent().getName()));
-        EmailUtils.sendEmail(new EmailModel(employee, "人事管理系统测试##员工入职","emailpy.py"));
+        EmailUtils.sendEmail(new EmailModel(employee, "人事管理系统测试##员工入职", "emailpy.py"));
 //        mailReceiver.handler(employee);
         return result;
     }
@@ -88,7 +88,7 @@ public class EmployeeService {
         employee.setId(null);
         employeeRecycleService.addEmployeeRecycle(employee);
         oplogService.addOpLog(new OpLog((byte) 9, new Date(), "员工离职:name:" + employee.getName() + "---workId:" + employee.getWorkid(), Hruitls.getCurrent().getName()));
-        EmailUtils.sendEmail(new EmailModel(employee, "人事管理系统测试##员工离职","emailpyout.py"));
+        EmailUtils.sendEmail(new EmailModel(employee, "人事管理系统测试##员工离职", "emailpyout.py"));
         return employeeMapper.deleteByPrimaryKey(id);
     }
 
@@ -108,7 +108,7 @@ public class EmployeeService {
     }
 
     public Integer deleteEmpByEids(Integer[] ids) {
-        oplogService.addOpLog(new OpLog((byte) 9, new Date(), "员工批量离职:name:" , Hruitls.getCurrent().getName()));
+        oplogService.addOpLog(new OpLog((byte) 9, new Date(), "员工批量离职:name:", Hruitls.getCurrent().getName()));
         return employeeMapper.deleteByPrimaryKeys(ids);
     }
 

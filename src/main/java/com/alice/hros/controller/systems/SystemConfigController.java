@@ -25,7 +25,7 @@ public class SystemConfigController {
      * @Description  系統菜單加載
      * @Date 16:13 2021/01/14
      * @Param []
-     * @return java.util.List<com.liruilong.hros.model.Menu>
+     * @return java.util.List<com.alice.hros.model.Menu>
      **/
 
     @GetMapping("/menu")

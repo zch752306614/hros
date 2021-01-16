@@ -23,7 +23,7 @@ public class CustomFilterInvocationSecurityMetadataSource implements FilterInvoc
     MenuService menuService;
     //路径比较工具
     AntPathMatcher antPathMatcher = new AntPathMatcher();
-    Logger logger = Logger.getLogger("com.liruilong.hros.config.ustomFilterInvocationSecurityMetadataSource");
+    Logger logger = Logger.getLogger("com.alice.hros.config.ustomFilterInvocationSecurityMetadataSource");
     /**
      * @return java.util.Collection<org.springframework.security.access.ConfigAttribute> * 返回值是 Collection<ConfigAttribute>，表示当前请求 URL 所需的角色。
      * @Author Alice

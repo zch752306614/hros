@@ -22,7 +22,7 @@ public class EmailUtils {
     static JavaMailSender javaMailSender;
 
     final static Logger logger = LoggerFactory.getLogger(EmailUtils.class);
-    final static String PATH = "src\\main\\java\\com\\liruilong\\hros\\script\\";
+    final static String PATH = "src\\main\\java\\com\\alice\\hros\\script\\";
 
     public static void sendEmail(EmailModel emailModel) {
 

@@ -14,8 +14,8 @@ import java.io.PrintWriter;
 
 /**
  * @Description :
- * @Author: Liruilong
- * @Date: 2020/5/1 18:26
+ * @Author: Alice
+ * @Date: 2021/01/12 18:26
  */
 @Component
 public class MyAccessDeniedHandler implements AccessDeniedHandler {
