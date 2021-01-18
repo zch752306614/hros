@@ -53,8 +53,8 @@ public class HrService implements UserDetailsService {
 
     @Transactional
     public boolean updateHrRole(Integer hrid, Integer[] rids) {
-        oplogService.addOpLog(new OpLog((byte) 8,new Date(),"操作员角色更新", Hruitls.getCurrent().getName()));
-        Loggerlogger.warning("hrid:"+hrid + Arrays.toString(rids));
+        oplogService.addOpLog(new OpLog((byte) 8, new Date(), "操作员角色更新", Hruitls.getCurrent().getName()));
+        Loggerlogger.warning("hrid:" + hrid + Arrays.toString(rids));
         int i = hrRoleMapper.deleteByHeId(hrid);
         if (rids == null || rids.length == 0) {
             return true;
@@ -64,16 +64,21 @@ public class HrService implements UserDetailsService {
     }
 
     public Integer updateHr(Hr hr) {
-        oplogService.addOpLog(new OpLog((byte) 8,new Date(),"操作员信息更新:" + hr.getName(), Hruitls.getCurrent().getName()));
+        oplogService.addOpLog(new OpLog((byte) 8, new Date(), "操作员信息更新:" + hr.getName(), Hruitls.getCurrent().getName()));
         return hrMapper.updateByPrimaryKeySelective(hr);
     }
 
     public Integer deleteHrById(Integer id) {
-        oplogService.addOpLog(new OpLog((byte) 8,new Date(),"删除操作员: id=" + id, Hruitls.getCurrent().getName()));
+        oplogService.addOpLog(new OpLog((byte) 8, new Date(), "删除操作员: id=" + id, Hruitls.getCurrent().getName()));
         return hrMapper.deleteByPrimaryKey(id);
     }
 
     public List<Hr> getAllHrsExceptCurrentHr() {
-      return hrMapper.getAllHrsExceptCurrentHr(Hruitls.getCurrent().getId());
+        return hrMapper.getAllHrsExceptCurrentHr(Hruitls.getCurrent().getId());
+    }
+
+    public Integer insert(Hr hr) {
+        oplogService.addOpLog(new OpLog((byte) 8, new Date(), "新增操作员:" + hr.getName(), Hruitls.getCurrent().getName()));
+        return hrMapper.insert(hr);
     }
 }

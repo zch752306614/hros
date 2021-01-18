@@ -25,8 +25,8 @@ public class HrController {
     RoleService roleService;
 
     @GetMapping("/")
-    public List<Hr> getAllHRs(String name){
-        return  hrService.getAllHRs(name);
+    public List<Hr> getAllHRs(String name) {
+        return hrService.getAllHRs(name);
 
     }
 
@@ -37,6 +37,7 @@ public class HrController {
         }
         return RespBean.error("更新失败!");
     }
+
     @GetMapping("/roles")
     public List<Role> getAllRoles() {
         return roleService.getAllRoles();
@@ -56,6 +57,14 @@ public class HrController {
             return RespBean.ok("删除成功!");
         }
         return RespBean.error("删除失败!");
+    }
+
+    @PutMapping("/addRole")
+    public RespBean addRole(@RequestBody Hr hr) {
+        if (hrService.insert(hr) == 1) {
+            return RespBean.ok("新增成功!");
+        }
+        return RespBean.error("新增失败!");
     }
 
 }
