@@ -59,9 +59,10 @@ public class HrController {
         return RespBean.error("删除失败!");
     }
 
-    @PutMapping("/addRole")
+    @PostMapping("/addRole")
     public RespBean addRole(@RequestBody Hr hr) {
-        if (hrService.insert(hr) == 1) {
+        System.out.println("hr=" + hr.toString());
+        if (hrService.insertSelective(hr) == 1) {
             return RespBean.ok("新增成功!");
         }
         return RespBean.error("新增失败!");

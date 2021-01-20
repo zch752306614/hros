@@ -77,8 +77,8 @@ public class HrService implements UserDetailsService {
         return hrMapper.getAllHrsExceptCurrentHr(Hruitls.getCurrent().getId());
     }
 
-    public Integer insert(Hr hr) {
+    public Integer insertSelective(Hr hr) {
         oplogService.addOpLog(new OpLog((byte) 8, new Date(), "新增操作员:" + hr.getName(), Hruitls.getCurrent().getName()));
-        return hrMapper.insert(hr);
+        return hrMapper.insertSelective(hr);
     }
 }
