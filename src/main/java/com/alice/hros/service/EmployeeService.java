@@ -32,6 +32,8 @@ public class EmployeeService {
     OplogService oplogService;
     @Autowired
     EmployeeRecycleService employeeRecycleService;
+    @Autowired
+    MailService mailService;
 
     /*  运行的这个类时的日志打印*/
     public final static Logger logger = LoggerFactory.getLogger(EmployeeService.class);
@@ -73,8 +75,9 @@ public class EmployeeService {
         employee.setContractterm(Double.parseDouble(decimalFormat.format(month / 12)));
         int result = employeeMapper.insertSelective(employee);
         oplogService.addOpLog(new OpLog((byte) 2, new Date(), "员工入职::name:" + employee.getName() + "workId:" + employee.getWorkid(), Hruitls.getCurrent().getName()));
-        EmailUtils.sendEmail(new EmailModel(employee, "人事管理系统测试##员工入职", "emailpy.py"));
-//        mailReceiver.handler(employee);
+        //EmailUtils.sendEmail(new EmailModel(employee, "人事管理系统测试##员工入职", "emailpy.py"));
+        mailService.sendEmail(new EmailModel(employee, "人事管理系统测试##员工入职", "恭喜您入职成功！", ""));
+        //mailReceiver.handler(employee);
         return result;
     }
 
@@ -88,7 +91,8 @@ public class EmployeeService {
         employee.setId(null);
         employeeRecycleService.addEmployeeRecycle(employee);
         oplogService.addOpLog(new OpLog((byte) 9, new Date(), "员工离职:name:" + employee.getName() + "---workId:" + employee.getWorkid(), Hruitls.getCurrent().getName()));
-        EmailUtils.sendEmail(new EmailModel(employee, "人事管理系统测试##员工离职", "emailpyout.py"));
+        //EmailUtils.sendEmail(new EmailModel(employee, "人事管理系统测试##员工离职", "emailpyout.py"));
+        mailService.sendEmail(new EmailModel(employee, "人事管理系统测试##员工离职", "您已成功离职！", ""));
         return employeeMapper.deleteByPrimaryKey(id);
     }
 

@@ -1,9 +1,10 @@
 package com.alice.hros.controller;
 
 import com.alice.hros.model.RespBean;
+import com.wf.captcha.ArithmeticCaptcha;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.wf.captcha.ArithmeticCaptcha;
+
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;

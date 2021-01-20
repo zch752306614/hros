@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "Redisspring.redis.host",
+      "type": "java.lang.String",
+      "description": "Description for Redisspring.redis.host."
+  }
+] }

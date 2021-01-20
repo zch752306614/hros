@@ -19,6 +19,7 @@ public class ThreadUtils {
     // 构建一个邮件发送的线程
     public static Thread getThtead(EmailModel emailModel) {
         return new Thread(() -> EmailUtils.sendGEmail(emailModel));
+        //return new Thread(() -> EmailUtils.sendEmailNew(emailModel));
     }
     /**
      * @Author Alice
