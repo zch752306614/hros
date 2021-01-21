@@ -201,4 +201,96 @@
       name = #{name,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <insert id="adjustSalary" parameterType="com.alice.hros.model.Salary" >
+    insert into salary
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="basicsalary != null" >
+        basicSalary,
+      </if>
+      <if test="bonus != null" >
+        bonus,
+      </if>
+      <if test="lunchsalary != null" >
+        lunchSalary,
+      </if>
+      <if test="trafficsalary != null" >
+        trafficSalary,
+      </if>
+      <if test="allsalary != null" >
+        allSalary,
+      </if>
+      <if test="pensionbase != null" >
+        pensionBase,
+      </if>
+      <if test="pensionper != null" >
+        pensionPer,
+      </if>
+      <if test="createdate != null" >
+        createDate,
+      </if>
+      <if test="medicalbase != null" >
+        medicalBase,
+      </if>
+      <if test="medicalper != null" >
+        medicalPer,
+      </if>
+      <if test="accumulationfundbase != null" >
+        accumulationFundBase,
+      </if>
+      <if test="accumulationfundper != null" >
+        accumulationFundPer,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=");" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="basicsalary != null" >
+        #{basicsalary,jdbcType=INTEGER},
+      </if>
+      <if test="bonus != null" >
+        #{bonus,jdbcType=INTEGER},
+      </if>
+      <if test="lunchsalary != null" >
+        #{lunchsalary,jdbcType=INTEGER},
+      </if>
+      <if test="trafficsalary != null" >
+        #{trafficsalary,jdbcType=INTEGER},
+      </if>
+      <if test="allsalary != null" >
+        #{allsalary,jdbcType=INTEGER},
+      </if>
+      <if test="pensionbase != null" >
+        #{pensionbase,jdbcType=INTEGER},
+      </if>
+      <if test="pensionper != null" >
+        #{pensionper,jdbcType=REAL},
+      </if>
+      <if test="createdate != null" >
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="medicalbase != null" >
+        #{medicalbase,jdbcType=INTEGER},
+      </if>
+      <if test="medicalper != null" >
+        #{medicalper,jdbcType=REAL},
+      </if>
+      <if test="accumulationfundbase != null" >
+        #{accumulationfundbase,jdbcType=INTEGER},
+      </if>
+      <if test="accumulationfundper != null" >
+        #{accumulationfundper,jdbcType=REAL},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+    </trim>
+    insert into empsalary(eid, sid) values(#{sid},LAST_INSERT_ID())
+  </insert>
 </mapper>

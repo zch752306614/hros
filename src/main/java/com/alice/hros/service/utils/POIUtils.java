@@ -160,6 +160,9 @@ public class POIUtils {
         HSSFCell c24 = r0.createCell(24);
         c24.setCellStyle(headerStyle);
         c24.setCellValue("合同终止日期");
+        HSSFCell c25 = r0.createCell(25);
+        c25.setCellStyle(headerStyle);
+        c25.setCellValue("转正日期");
         for (int i = 0; i < list.size(); i++) {
             Employee emp = list.get(i);
             HSSFRow row = sheet.createRow(i + 1);
@@ -228,6 +231,7 @@ public class POIUtils {
                 HSSFSheet sheet = workbook.getSheetAt(i);
                 //4. 获取表单中的行数
                 int physicalNumberOfRows = sheet.getPhysicalNumberOfRows();
+                System.out.println("表单行数=" + physicalNumberOfRows);
                 for (int j = 0; j < physicalNumberOfRows; j++) {
                     //5. 跳过标题行
                     if (j == 0) {
@@ -243,7 +247,10 @@ public class POIUtils {
                     employee = new Employee();
                     for (int k = 0; k < physicalNumberOfCells; k++) {
                         HSSFCell cell = row.getCell(k);
-                        System.out.println(cell);
+                        if (cell == null) {
+                            break;
+                        }
+                        System.out.println("cell=" + cell);
                         switch (cell.getCellType()) {
                             case STRING:
                                 String cellValue = cell.getStringCellValue();

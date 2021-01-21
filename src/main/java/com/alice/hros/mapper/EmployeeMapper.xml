@@ -327,8 +327,8 @@
     <select id="getTotalc" resultType="java.lang.Long">
         SELECT COUNT(*)
         from employee e
-        LEFT JOIN employeeec ec ON e.id = ec.eid
-        right JOIN rwards_punishments rp ON ec.ecType = rp.id
+        inner join (select distinct eid from employeeec) ec ON e.id = ec.eid
+        -- right JOIN rwards_punishments rp ON ec.ecType = rp.id
         <where>
             <if test="emp!=null">
                 <if test="emp.name !=null and emp.name!=''">
@@ -336,8 +336,6 @@
                 </if>
             </if>
         </where>
-
-        order by ec.id desc
     </select>
     <select id="getEmployeetByPage" resultMap="BaseResultMapect">
         SELECT

@@ -43,4 +43,13 @@ public class SalaryController {
         }
         return RespBean.error("更新失败!");
     }
+
+    @PostMapping("/adjustSalary")
+    public RespBean adjustSalary(@RequestBody Salary salary, @RequestParam(defaultValue = "0") Integer eid) {
+        if (salaryService.adjustSalary(salary, eid) == 1) {
+            return RespBean.ok("调薪成功!");
+        }
+        return RespBean.error("调薪失败!");
+    }
+
 }

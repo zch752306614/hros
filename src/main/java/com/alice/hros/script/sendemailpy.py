@@ -9,12 +9,12 @@ from email.header import Header
 # 用于构建邮件头
 
 # 发信方的信息：发信邮箱，QQ 邮箱授权码
-from_addr = 'liruilong108@foxmail.com'
-password = 'xznjnyvgnvmuicji'
+from_addr = 'zhangchenhuang0330@163.com'
+password = 'PHHSMSAFITPIGIBO'
 
 # 收信方邮箱
 to_addr = sys.argv[1]
-#to_addr ='1224965096@qq.com'
+#to_addr ='7523066146@qq.com'
 # 发信服务器
 smtp_server = 'smtp.qq.com'
 

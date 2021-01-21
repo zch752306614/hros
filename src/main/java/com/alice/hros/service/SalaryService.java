@@ -42,4 +42,11 @@ public class SalaryService {
 
         return salaryMapper.updateByPrimaryKeySelective(salary);
     }
+
+    public Integer adjustSalary(Salary salary,Integer eid) {
+        oplogService.addOpLog(new OpLog((byte) 5, new Date(), "添加套账:name=" +salary.getName(), Hruitls.getCurrent().getName()));
+        salary.setCreatedate(new Date());
+        salary.setAllsalary( salary.getBasicsalary() + salary.getBonus() + salary.getLunchsalary() + salary.getTrafficsalary() + salary.getPensionbase() );
+        return salaryMapper.adjustSalary(salary,eid);
+    }
 }
