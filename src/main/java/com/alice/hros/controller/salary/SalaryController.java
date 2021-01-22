@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/salary/sob")
@@ -45,7 +46,20 @@ public class SalaryController {
     }
 
     @PostMapping("/adjustSalary")
-    public RespBean adjustSalary(@RequestBody Salary salary, @RequestParam(defaultValue = "0") Integer eid) {
+    public RespBean adjustSalary(@RequestBody Map map) {
+        Salary salary = new Salary();
+        int eid = Integer.parseInt(map.get("eid").toString());
+        salary.setAccumulationfundbase(Integer.parseInt(map.get("accumulationfundbase").toString()));
+        salary.setAccumulationfundper(Float.parseFloat(map.get("accumulationfundper").toString()));
+        salary.setBasicsalary(Integer.parseInt(map.get("basicsalary").toString()));
+        salary.setBonus(Integer.parseInt(map.get("bonus").toString()));
+        salary.setLunchsalary(Integer.parseInt(map.get("lunchsalary").toString()));
+        salary.setMedicalbase(Integer.parseInt(map.get("medicalbase").toString()));
+        salary.setPensionbase(Integer.parseInt(map.get("pensionbase").toString()));
+        salary.setPensionper(Float.parseFloat(map.get("pensionper").toString()));
+        salary.setMedicalper(Float.parseFloat(map.get("medicalper").toString()));
+        salary.setTrafficsalary(Integer.parseInt(map.get("trafficsalary").toString()));
+        salary.setName(map.get("name").toString());
         if (salaryService.adjustSalary(salary, eid) == 1) {
             return RespBean.ok("调薪成功!");
         }

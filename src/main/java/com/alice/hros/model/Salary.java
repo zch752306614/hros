@@ -144,4 +144,24 @@ public class Salary {
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Salary{" +
+                "id=" + id +
+                ", basicsalary=" + basicsalary +
+                ", bonus=" + bonus +
+                ", lunchsalary=" + lunchsalary +
+                ", trafficsalary=" + trafficsalary +
+                ", allsalary=" + allsalary +
+                ", pensionbase=" + pensionbase +
+                ", pensionper=" + pensionper +
+                ", createdate=" + createdate +
+                ", medicalbase=" + medicalbase +
+                ", medicalper=" + medicalper +
+                ", accumulationfundbase=" + accumulationfundbase +
+                ", accumulationfundper=" + accumulationfundper +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

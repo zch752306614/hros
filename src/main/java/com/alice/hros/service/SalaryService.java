@@ -19,34 +19,40 @@ public class SalaryService {
     SalaryMapper salaryMapper;
     @Autowired
     OplogService oplogService;
+    @Autowired
+    EmployeeService employeeService;
 
     public List<Salary> getAllSalaries() {
         return salaryMapper.getAllSalaries();
     }
 
     public Integer addSalary(Salary salary) {
-        oplogService.addOpLog(new OpLog((byte) 5, new Date(), "添加套账:name=" +salary.getName(), Hruitls.getCurrent().getName()));
+        oplogService.addOpLog(new OpLog((byte) 5, new Date(), "添加套账:name=" + salary.getName(), Hruitls.getCurrent().getName()));
         salary.setCreatedate(new Date());
-        salary.setAllsalary( salary.getBasicsalary() + salary.getBonus() + salary.getLunchsalary() + salary.getTrafficsalary() + salary.getPensionbase() );
+        salary.setAllsalary(salary.getBasicsalary() + salary.getBonus() + salary.getLunchsalary() + salary.getTrafficsalary() + salary.getPensionbase());
         return salaryMapper.insertSelective(salary);
     }
 
     public Integer deleteSalaryById(Integer id) {
-        oplogService.addOpLog(new OpLog((byte) 5, new Date(), "删除套账:id=" +id , Hruitls.getCurrent().getName()));
+        oplogService.addOpLog(new OpLog((byte) 5, new Date(), "删除套账:id=" + id, Hruitls.getCurrent().getName()));
         return salaryMapper.deleteByPrimaryKey(id);
     }
 
     public Integer updateSalaryById(Salary salary) {
-        salary.setAllsalary( salary.getBasicsalary() + salary.getBonus() + salary.getLunchsalary() + salary.getTrafficsalary() + salary.getPensionbase() );
+        salary.setAllsalary(salary.getBasicsalary() + salary.getBonus() + salary.getLunchsalary() + salary.getTrafficsalary() + salary.getPensionbase());
         oplogService.addOpLog(new OpLog((byte) 5, new Date(), "更新套账:" + salary.getName(), Hruitls.getCurrent().getName()));
 
         return salaryMapper.updateByPrimaryKeySelective(salary);
     }
 
-    public Integer adjustSalary(Salary salary,Integer eid) {
-        oplogService.addOpLog(new OpLog((byte) 5, new Date(), "添加套账:name=" +salary.getName(), Hruitls.getCurrent().getName()));
+    public Integer adjustSalary(Salary salary, Integer eid) {
+        oplogService.addOpLog(new OpLog((byte) 5, new Date(), "添加套账:name=" + salary.getName(), Hruitls.getCurrent().getName()));
         salary.setCreatedate(new Date());
-        salary.setAllsalary( salary.getBasicsalary() + salary.getBonus() + salary.getLunchsalary() + salary.getTrafficsalary() + salary.getPensionbase() );
-        return salaryMapper.adjustSalary(salary,eid);
+        salary.setAllsalary(salary.getBasicsalary() + salary.getBonus() + salary.getLunchsalary() + salary.getTrafficsalary() + salary.getPensionbase());
+        if (salaryMapper.insertSelective(salary) == 1) {
+            int sid = salary.getId();
+            return employeeService.updateEmployeeSalaryById(eid, sid);
+        }
+        return 0;
     }
 }

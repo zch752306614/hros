@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 public class GlobalExceptionHandler {
 
     Logger logger = Logger.getLogger("com.alice.hros.Exception.GlobalExceptionHandler");
-    @ExceptionHandler(SQLException.class)
+    //@ExceptionHandler(SQLException.class)
     public RespBean sqlException(SQLException e) {
         if (e instanceof MySQLIntegrityConstraintViolationException) {
             return RespBean.error("该数据有关联数据,操作异常!");

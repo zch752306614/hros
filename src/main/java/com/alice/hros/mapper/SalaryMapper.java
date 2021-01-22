@@ -1,6 +1,7 @@
 package com.alice.hros.mapper;
 
 import com.alice.hros.model.Salary;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -19,5 +20,4 @@ public interface SalaryMapper {
 
     List<Salary> getAllSalaries();
 
-    int adjustSalary(Salary salary,Integer eid);
 }
