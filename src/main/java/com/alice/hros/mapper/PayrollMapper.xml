@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.alice.hros.mapper.PayrollMapper" >
+    <resultMap id="BaseResultMap" type="com.alice.hros.model.Payroll" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="eid" property="eid" jdbcType="INTEGER" />
+        <result column="date" property="date" jdbcType="DATE" />
+        <result column="payable" property="payable" jdbcType="FLOAT" />
+        <result column="realwage" property="realwage" jdbcType="FLOAT" />
+        <result column="deduction" property="deduction" jdbcType="FLOAT" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        id, eid, date, payable, realwage, deduction
+    </sql>
+    <insert id="generatePayroll">
+
+    </insert>
+
+</mapper>

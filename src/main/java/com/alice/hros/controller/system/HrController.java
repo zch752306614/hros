@@ -6,6 +6,7 @@ import com.alice.hros.model.Role;
 import com.alice.hros.service.HrService;
 import com.alice.hros.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -62,6 +63,9 @@ public class HrController {
     @PostMapping("/addRole")
     public RespBean addRole(@RequestBody Hr hr) {
         System.out.println("hr=" + hr.toString());
+        String password = hr.getPassword();
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        hr.setPassword(encoder.encode(password));
         if (hrService.insertSelective(hr) == 1) {
             return RespBean.ok("新增成功!");
         }

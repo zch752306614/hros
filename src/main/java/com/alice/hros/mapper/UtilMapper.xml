@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.alice.hros.mapper.UtilMapper" >
+
+    <select id="selectByMaps" resultType="java.util.Map" parameterType="map">
+        ${sql}
+    </select>
+    <update id="update" parameterType="map">
+        ${sql}
+    </update>
+    <select id="selectByObject" resultType="com.alibaba.fastjson.JSONObject">
+        ${sql}
+    </select>
+    <insert id="insert">
+        ${sql}
+    </insert>
+
+</mapper>
