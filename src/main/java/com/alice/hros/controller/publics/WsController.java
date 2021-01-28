@@ -8,9 +8,11 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
+import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.Date;
 
+@ApiIgnore
 @Controller
 public class WsController {
     @Autowired
@@ -24,4 +26,5 @@ public class WsController {
         chatMsg.setDate(new Date());
         simpMessagingTemplate.convertAndSendToUser(chatMsg.getTo(), "/queue/chat", chatMsg);
     }
+
 }

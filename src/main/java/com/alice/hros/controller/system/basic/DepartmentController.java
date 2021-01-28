@@ -4,6 +4,8 @@ package com.alice.hros.controller.system.basic;
 import com.alice.hros.model.Department;
 import com.alice.hros.model.RespBean;
 import com.alice.hros.service.DepartmentService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,16 +19,21 @@ import java.util.List;
  * @return
  **/
 
+@Api(tags = "部门管理")
 @RestController
 @RequestMapping("/system/basic/department")
 public class DepartmentController {
     @Autowired
     DepartmentService departmentService;
+
     @GetMapping("/")
+    @ApiOperation("获取所有部门")
     public List<Department> getAllDepartments() {
         return departmentService.getAllDepartments();
     }
+
     @PostMapping("/")
+    @ApiOperation("添加部门")
     public RespBean addDep(@RequestBody Department dep) {
         departmentService.addDep(dep);
         if (dep.getResult() == 1) {
@@ -36,6 +43,7 @@ public class DepartmentController {
     }
 
     @DeleteMapping("/{id}")
+    @ApiOperation("删除部门")
     public RespBean deleteDepById(@PathVariable Integer id) {
         Department dep = new Department();
         dep.setId(id);
@@ -49,4 +57,5 @@ public class DepartmentController {
         }
         return RespBean.error("删除失败");
     }
+
 }

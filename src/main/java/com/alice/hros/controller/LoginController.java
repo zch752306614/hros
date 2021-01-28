@@ -2,6 +2,8 @@ package com.alice.hros.controller;
 
 import com.alice.hros.model.RespBean;
 import com.wf.captcha.ArithmeticCaptcha;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,6 +17,7 @@ import java.util.logging.Logger;
  * @Author: Alice
  * @Date: 2021/01/14 19:58
  */
+@Api(tags = "登录验证")
 @RestController
 public class LoginController {
 
@@ -26,6 +29,7 @@ public class LoginController {
     }
 
     @GetMapping(value = "/auth/code")
+    @ApiOperation("生成验证码")
     public Map getCode(HttpServletRequest request) {
         // 算术类型 https://gitee.com/whvse/EasyCaptcha
         ArithmeticCaptcha captcha = new ArithmeticCaptcha(111, 36);
@@ -46,4 +50,5 @@ public class LoginController {
         Loggerlogger.warning("校验码为：" + result);
         return imgResult;
     }
+
 }

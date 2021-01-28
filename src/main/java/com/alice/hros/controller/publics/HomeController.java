@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import springfox.documentation.annotations.ApiIgnore;
+
 import java.util.List;
 
 /**
@@ -15,6 +17,8 @@ import java.util.List;
  * @Author: Alice
  * @Date: 2021/01/18 19:23
  */
+
+@ApiIgnore
 @RestController
 public class HomeController {
 
@@ -34,6 +38,5 @@ public class HomeController {
     public List<OpLog> getAllsOplog() {
         return oplogService.getAllsOplogm();
     }
-
 
 }
